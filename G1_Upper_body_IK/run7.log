@@ -1,0 +1,490 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/yilang/research/IsaacLab-v6/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/home/yilang/research/IsaacLab-v6/env_isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/yilang/research/IsaacLab-v6/env_isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260612_120912.log
+2026-06-12T16:09:12Z [80ms] [Warning] [carb.windowing-glfw.gamepad] Joystick with unknown remapping detected (will be ignored):  Logitech G502 [030000006d0400007f40000011010000]
+2026-06-12T16:09:12Z [299ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: AMD Ryzen 7 9800X3D 8-Core Processor (RADV RAPHAEL_MENDOCINO)
+2026-06-12T16:09:12Z [299ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: AMD Ryzen 7 9800X3D 8-Core Processor (RADV RAPHAEL_MENDOCINO)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.159.03    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5090          | Yes: 0 |     | 32607   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2b85      | 285073a4.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | AMD Ryzen 7 9800X3D 8-Core Pro.. |        |     | 64892   MB | 1002      | 0          |
+|     |                                  |        |     |            | 13c0      | 00000000.. |
+|     |                                  |        |     |            | 78        |            |
+|=============================================================================================|
+| OS: 24.04.4 LTS (Noble Numbat) ubuntu, Version: 24.04.4, Kernel: 6.17.0-35-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101011 (1.21.1.11)
+| Processor: AMD Ryzen 7 9800X3D 8-Core Processor
+| Cores: 8 | Logical Cores: 16
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 190581 | Free Memory: 180822
+| Total Page/Swap (MB): 8191 | Free Page/Swap: 8191
+|---------------------------------------------------------------------------------------------|
+2026-06-12T16:09:12Z [521ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-06-12T16:09:12Z [530ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-06-12T16:09:12Z [530ms] [Warning] [gpu.foundation.plugin] Detected IOMMU is enabled. Running CUDA peer-to-peer bandwidth and latency validation.
+Unidirectional P2P=Enabled Bandwidth (P2P Writes) Matrix (GB/s)
+   D\D     0 
+     0 1514.05 
+P2P=Enabled Latency (P2P Writes) Matrix (us)
+   GPU     0 
+     0   2.07 
+
+   CPU     0 
+     0   1.86 
+2026-06-12T16:09:13Z [1,077ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-06-12T16:09:13Z [1,237ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-06-12T16:09:13Z [1,242ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-06-12T16:09:14Z [2,305ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-06-12T16:09:14Z [2,375ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-06-12T16:09:14Z [2,375ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-06-12T16:09:14Z [2,376ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-06-12T16:09:15Z [3,045ms] [Warning] [isaaclab.app.app_launcher] Due to an issue with Pinocchio and pxr.Gf.Matrix4d, patching the Matrix4d constructor to convert arguments into a list of floats.
+2026-06-12T16:09:16Z [4,476ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+[INFO]: Parsing configuration from: <class 'isaaclab_tasks.manager_based.locomanipulation.pick_place.fixed_base_upper_body_ik_g1_env_cfg.FixedBaseUpperBodyIKG1EnvCfg'>
+2026-06-12T16:09:17Z [5,398ms] [Warning] [isaaclab.envs.manager_based_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-06-12_12-09-17.log[0m
+[36m======================================================================================[0m
+
+[33m12:09:17 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.005
+	Rendering step-size   : 0.01
+	Environment step-size : 0.02
+[33m12:09:17 [manager_based_env.py] WARNING: The render interval (2) is smaller than the decimation (4). Multiple render calls will happen for each environment step. If this is not intended, set the render interval to be equal to the decimation.[0m
+[INFO]: Time taken for scene creation : 1.168165 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 2.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[33m12:09:19 [actuator_pd.py] WARNING: The <ImplicitActuatorCfg> object has a value for 'effort_limit'. This parameter will be removed in the future. To set the effort limit, please use 'effort_limit_sim' instead.[0m
+[33m12:09:19 [actuator_pd.py] WARNING: The <ImplicitActuatorCfg> object has a value for 'velocity_limit'. Previously, although this value was specified, it was not getting used by implicit actuators. Since this parameter affects the simulation behavior, we continue to not use it. This parameter will be removed in the future. To set the velocity limit, please use 'velocity_limit_sim' instead.[0m
+[INFO]: Time taken for simulation start : 0.792101 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++--------+----------------------------+
+| Index  | Name                       |
++--------+----------------------------+
+|   0    | reset_scene_to_default     |
++--------+----------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|  Active Action Terms (shape: 28)  |
++-------+---------------+-----------+
+| Index | Name          | Dimension |
++-------+---------------+-----------+
+|   0   | upper_body_ik |        28 |
++-------+---------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 1 groups.
++-----------------------------------------------+
+|  Active Observation Terms in Group: 'policy'  |
++---------+------------------------+------------+
+|  Index  | Name                   |   Shape    |
++---------+------------------------+------------+
+|    0    | actions                |   (28,)    |
+|    1    | robot_joint_pos        |   (43,)    |
+|    2    | robot_root_pos         |    (3,)    |
+|    3    | robot_root_rot         |    (4,)    |
+|    4    | object_pos             |    (3,)    |
+|    5    | object_rot             |    (4,)    |
+|    6    | robot_links_state      |  (46, 13)  |
+|    7    | left_eef_pos           |    (3,)    |
+|    8    | left_eef_quat          |    (4,)    |
+|    9    | right_eef_pos          |    (3,)    |
+|    10   | right_eef_quat         |    (4,)    |
+|    11   | hand_joint_state       |   (14,)    |
+|    12   | head_joint_state       |    (0,)    |
+|    13   | object                 |   (13,)    |
++---------+------------------------+------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 2 active terms.
++------------------------------------+
+|      Active Termination Terms      |
++-------+-----------------+----------+
+| Index | Name            | Time Out |
++-------+-----------------+----------+
+|   0   | time_out        |   True   |
+|   1   | object_dropping |  False   |
++-------+-----------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 0 active terms.
++-----------------------+
+|  Active Reward Terms  |
++-------+------+--------+
+| Index | Name | Weight |
++-------+------+--------+
++-------+------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+/home/yilang/research/IsaacLab-v6/env_isaaclab/lib/python3.11/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /home/yilang/research/IsaacLab-v6/Fable_5/G1_Upper_body_IK/videos folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+[CTRL] wheel at [-0.35  0.45  0.7 ], left wrist [-0.149  0.2    0.845], right wrist [0.149 0.2   0.845]
+2026-06-12T16:09:20Z [8,029ms] [Warning] [omni.fabric.plugin] getAttributeCount called on non-existent path /World/envs/env_0/Robot/right_hand/right_hand_palm_link/collisions/right_hand_palm_link
+2026-06-12T16:09:20Z [8,029ms] [Warning] [omni.fabric.plugin] getTypes called on non-existent path /World/envs/env_0/Robot/right_hand/right_hand_palm_link/collisions/right_hand_palm_link
+2026-06-12T16:09:21Z [9,225ms] [Warning] [omni.syntheticdata.plugin] OgnSdPostRenderVarToHost : rendervar copy from texture directly to host buffer is counter-performant. Please use copy from texture to device buffer first.
+[CTRL] RAISE    step   50 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.185,+0.236,+0.918) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] STAGE    step  100 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.349,+0.212,+0.886) | Rwrist_x +0.148 | success_now=False streak=0
+2026-06-12T16:09:24Z [12,492ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[CTRL] ADVANCE  step  150 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.487,+0.146,+0.820) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] ADVANCE  step  200 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.460,+0.199,+0.807) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] SCOOP    step  250 | wheel (-0.350,+0.450,+0.698) |v|max 0.01 | Lwrist (-0.446,+0.229,+0.803) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] CLAMP    step  300 | wheel (-0.345,+0.445,+0.699) |v|max 0.02 | Lwrist (-0.453,+0.237,+0.821) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] LIFT     step  350 | wheel (-0.374,+0.414,+0.725) |v|max 0.07 | Lwrist (-0.465,+0.240,+0.866) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY    step  400 | wheel (-0.340,+0.420,+0.835) |v|max 0.20 | Lwrist (-0.438,+0.253,+0.977) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY    step  450 | wheel (-0.062,+0.450,+0.835) |v|max 0.28 | Lwrist (-0.165,+0.283,+0.976) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY2   step  500 | wheel (+0.176,+0.463,+0.838) |v|max 0.16 | Lwrist (+0.060,+0.302,+0.976) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY2   step  550 | wheel (+0.348,+0.443,+0.836) |v|max 0.17 | Lwrist (+0.206,+0.304,+0.974) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] LOWER    step  600 | wheel (+0.442,+0.400,+0.822) |v|max 0.04 | Lwrist (+0.283,+0.282,+0.962) | Rwrist_x +0.147 | success_now=True streak=0
+[CTRL] LOWER    step  650 | wheel (+0.410,+0.381,+0.731) |v|max 0.05 | Lwrist (+0.252,+0.263,+0.872) | Rwrist_x +0.148 | success_now=True streak=0
+[CTRL] RELEASE  step  690 | wheel (+0.403,+0.378,+0.719) |v|max 0.01 | Lwrist (+0.250,+0.262,+0.869) | Rwrist_x +0.148 | success_now=True streak=25
+[CTRL] RELEASE  step  691 | wheel (+0.403,+0.378,+0.719) |v|max 0.01 | Lwrist (+0.250,+0.262,+0.869) | Rwrist_x +0.148 | success_now=True streak=26
+[CTRL] RELEASE  step  692 | wheel (+0.403,+0.378,+0.719) |v|max 0.01 | Lwrist (+0.251,+0.262,+0.870) | Rwrist_x +0.148 | success_now=True streak=27
+[CTRL] RELEASE  step  693 | wheel (+0.403,+0.378,+0.719) |v|max 0.01 | Lwrist (+0.251,+0.262,+0.871) | Rwrist_x +0.148 | success_now=True streak=28
+[CTRL] RELEASE  step  694 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.252,+0.263,+0.872) | Rwrist_x +0.148 | success_now=True streak=29
+[CTRL] RELEASE  step  695 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.252,+0.263,+0.872) | Rwrist_x +0.148 | success_now=True streak=30
+[CTRL] RELEASE  step  696 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.252,+0.263,+0.873) | Rwrist_x +0.148 | success_now=True streak=31
+[CTRL] RELEASE  step  697 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.253,+0.263,+0.874) | Rwrist_x +0.148 | success_now=True streak=32
+[CTRL] RELEASE  step  698 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.253,+0.264,+0.874) | Rwrist_x +0.148 | success_now=True streak=33
+[CTRL] RELEASE  step  699 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.253,+0.264,+0.875) | Rwrist_x +0.148 | success_now=True streak=34
+[CTRL] RELEASE  step  700 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.254,+0.264,+0.876) | Rwrist_x +0.148 | success_now=True streak=35
+[CTRL] RELEASE  step  701 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.254,+0.264,+0.876) | Rwrist_x +0.148 | success_now=True streak=36
+[CTRL] RELEASE  step  702 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.254,+0.265,+0.877) | Rwrist_x +0.148 | success_now=True streak=37
+[CTRL] RELEASE  step  703 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.255,+0.265,+0.878) | Rwrist_x +0.148 | success_now=True streak=38
+[CTRL] RELEASE  step  704 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.255,+0.265,+0.878) | Rwrist_x +0.148 | success_now=True streak=39
+[CTRL] RELEASE  step  705 | wheel (+0.403,+0.379,+0.719) |v|max 0.01 | Lwrist (+0.255,+0.265,+0.879) | Rwrist_x +0.148 | success_now=True streak=40
+[CTRL] RELEASE  step  706 | wheel (+0.403,+0.379,+0.719) |v|max 0.02 | Lwrist (+0.256,+0.265,+0.880) | Rwrist_x +0.148 | success_now=True streak=41
+[CTRL] RELEASE  step  707 | wheel (+0.403,+0.379,+0.719) |v|max 0.02 | Lwrist (+0.256,+0.266,+0.880) | Rwrist_x +0.148 | success_now=True streak=42
+[CTRL] RELEASE  step  708 | wheel (+0.403,+0.379,+0.719) |v|max 0.02 | Lwrist (+0.256,+0.266,+0.881) | Rwrist_x +0.148 | success_now=True streak=43
+[CTRL] RELEASE  step  709 | wheel (+0.403,+0.379,+0.719) |v|max 0.02 | Lwrist (+0.257,+0.266,+0.882) | Rwrist_x +0.148 | success_now=True streak=44
+[CTRL] RELEASE  step  710 | wheel (+0.402,+0.379,+0.719) |v|max 0.02 | Lwrist (+0.257,+0.266,+0.882) | Rwrist_x +0.148 | success_now=True streak=45
+[CTRL] RELEASE  step  711 | wheel (+0.402,+0.380,+0.719) |v|max 0.02 | Lwrist (+0.257,+0.267,+0.883) | Rwrist_x +0.148 | success_now=True streak=46
+[CTRL] RELEASE  step  712 | wheel (+0.402,+0.380,+0.719) |v|max 0.03 | Lwrist (+0.258,+0.267,+0.884) | Rwrist_x +0.148 | success_now=True streak=47
+[CTRL] RELEASE  step  713 | wheel (+0.402,+0.380,+0.719) |v|max 0.02 | Lwrist (+0.258,+0.267,+0.884) | Rwrist_x +0.148 | success_now=True streak=48
+[CTRL] RELEASE  step  714 | wheel (+0.402,+0.380,+0.719) |v|max 0.01 | Lwrist (+0.258,+0.267,+0.885) | Rwrist_x +0.148 | success_now=True streak=49
+[CTRL] RELEASE  step  715 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.259,+0.267,+0.886) | Rwrist_x +0.148 | success_now=True streak=50
+[CTRL] RELEASE  step  716 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.259,+0.268,+0.887) | Rwrist_x +0.148 | success_now=True streak=51
+[CTRL] RELEASE  step  717 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.259,+0.268,+0.887) | Rwrist_x +0.148 | success_now=True streak=52
+[CTRL] RELEASE  step  718 | wheel (+0.402,+0.380,+0.720) |v|max 0.02 | Lwrist (+0.260,+0.268,+0.888) | Rwrist_x +0.148 | success_now=True streak=53
+[CTRL] RELEASE  step  719 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.260,+0.268,+0.889) | Rwrist_x +0.148 | success_now=True streak=54
+[CTRL] RELEASE  step  720 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.260,+0.268,+0.889) | Rwrist_x +0.148 | success_now=True streak=55
+[CTRL] RELEASE  step  721 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.261,+0.269,+0.890) | Rwrist_x +0.148 | success_now=True streak=56
+[CTRL] RELEASE  step  722 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.261,+0.269,+0.891) | Rwrist_x +0.148 | success_now=True streak=57
+[CTRL] RELEASE  step  723 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.261,+0.269,+0.891) | Rwrist_x +0.148 | success_now=True streak=58
+[CTRL] RELEASE  step  724 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.262,+0.269,+0.892) | Rwrist_x +0.148 | success_now=True streak=59
+[CTRL] RELEASE  step  725 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=60
+[CTRL] NUDGE    step  726 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=61
+[CTRL] NUDGE    step  727 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=62
+[CTRL] NUDGE    step  728 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=63
+[CTRL] NUDGE    step  729 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=64
+[CTRL] NUDGE    step  730 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=65
+[CTRL] NUDGE    step  731 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=66
+[CTRL] NUDGE    step  732 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=67
+[CTRL] NUDGE    step  733 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=68
+[CTRL] NUDGE    step  734 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=69
+[CTRL] NUDGE    step  735 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=70
+[CTRL] NUDGE    step  736 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=71
+[CTRL] NUDGE    step  737 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=72
+[CTRL] NUDGE    step  738 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.893) | Rwrist_x +0.148 | success_now=True streak=73
+[CTRL] NUDGE    step  739 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=74
+[CTRL] NUDGE    step  740 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=75
+[CTRL] NUDGE    step  741 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=76
+[CTRL] NUDGE    step  742 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=77
+[CTRL] NUDGE    step  743 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=78
+[CTRL] NUDGE    step  744 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=79
+[CTRL] NUDGE    step  745 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.270,+0.894) | Rwrist_x +0.148 | success_now=True streak=80
+[CTRL] NUDGE    step  746 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=81
+[CTRL] NUDGE    step  747 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=82
+[CTRL] NUDGE    step  748 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=83
+[CTRL] NUDGE    step  749 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=84
+[CTRL] NUDGE    step  750 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=85
+[CTRL] NUDGE    step  751 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=86
+[CTRL] NUDGE    step  752 | wheel (+0.402,+0.380,+0.719) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=87
+[CTRL] NUDGE    step  753 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=88
+[CTRL] NUDGE    step  754 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.262,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=89
+[CTRL] NUDGE    step  755 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=90
+[CTRL] NUDGE    step  756 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=91
+[CTRL] NUDGE    step  757 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=92
+[CTRL] NUDGE    step  758 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=93
+[CTRL] NUDGE    step  759 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=94
+[CTRL] NUDGE    step  760 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.894) | Rwrist_x +0.148 | success_now=True streak=95
+[CTRL] NUDGE    step  761 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=96
+[CTRL] NUDGE    step  762 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=97
+[CTRL] NUDGE    step  763 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=98
+[CTRL] NUDGE    step  764 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=99
+[CTRL] NUDGE    step  765 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=100
+[CTRL] NUDGE    step  766 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=101
+[CTRL] NUDGE    step  767 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=102
+[CTRL] NUDGE    step  768 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=103
+[CTRL] NUDGE    step  769 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=104
+[CTRL] NUDGE    step  770 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=105
+[CTRL] NUDGE    step  771 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.271,+0.895) | Rwrist_x +0.148 | success_now=True streak=106
+[CTRL] NUDGE    step  772 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=107
+[CTRL] NUDGE    step  773 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=108
+[CTRL] NUDGE    step  774 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=109
+[CTRL] NUDGE    step  775 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=110
+[CTRL] NUDGE    step  776 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=111
+[CTRL] NUDGE    step  777 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=112
+[CTRL] NUDGE    step  778 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=113
+[CTRL] NUDGE    step  779 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=114
+[CTRL] NUDGE    step  780 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=115
+[CTRL] NUDGE    step  781 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=116
+[CTRL] NUDGE    step  782 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=117
+[CTRL] NUDGE    step  783 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=118
+[CTRL] NUDGE    step  784 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=119
+[CTRL] NUDGE    step  785 | wheel (+0.402,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.263,+0.272,+0.895) | Rwrist_x +0.148 | success_now=True streak=120
+[CTRL] RETREAT_UP step  786 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.263,+0.272,+0.896) | Rwrist_x +0.148 | success_now=True streak=121
+[CTRL] RETREAT_UP step  787 | wheel (+0.402,+0.380,+0.720) |v|max 0.01 | Lwrist (+0.264,+0.272,+0.897) | Rwrist_x +0.148 | success_now=True streak=122
+[CTRL] RETREAT_UP step  788 | wheel (+0.403,+0.380,+0.720) |v|max 0.03 | Lwrist (+0.264,+0.273,+0.898) | Rwrist_x +0.148 | success_now=True streak=123
+[CTRL] RETREAT_UP step  789 | wheel (+0.403,+0.380,+0.721) |v|max 0.03 | Lwrist (+0.265,+0.273,+0.899) | Rwrist_x +0.148 | success_now=True streak=124
+[CTRL] RETREAT_UP step  790 | wheel (+0.403,+0.380,+0.721) |v|max 0.03 | Lwrist (+0.266,+0.273,+0.901) | Rwrist_x +0.148 | success_now=True streak=125
+[CTRL] RETREAT_UP step  791 | wheel (+0.403,+0.380,+0.722) |v|max 0.04 | Lwrist (+0.266,+0.273,+0.902) | Rwrist_x +0.148 | success_now=True streak=126
+[CTRL] RETREAT_UP step  792 | wheel (+0.404,+0.380,+0.723) |v|max 0.04 | Lwrist (+0.267,+0.273,+0.904) | Rwrist_x +0.148 | success_now=True streak=127
+[CTRL] RETREAT_UP step  793 | wheel (+0.404,+0.380,+0.723) |v|max 0.03 | Lwrist (+0.268,+0.273,+0.905) | Rwrist_x +0.148 | success_now=True streak=128
+[CTRL] RETREAT_UP step  794 | wheel (+0.404,+0.380,+0.724) |v|max 0.03 | Lwrist (+0.268,+0.274,+0.906) | Rwrist_x +0.148 | success_now=True streak=129
+[CTRL] RETREAT_UP step  795 | wheel (+0.404,+0.380,+0.725) |v|max 0.03 | Lwrist (+0.269,+0.274,+0.908) | Rwrist_x +0.148 | success_now=True streak=130
+[CTRL] RETREAT_UP step  796 | wheel (+0.404,+0.380,+0.725) |v|max 0.03 | Lwrist (+0.270,+0.274,+0.909) | Rwrist_x +0.148 | success_now=True streak=131
+[CTRL] RETREAT_UP step  797 | wheel (+0.405,+0.380,+0.726) |v|max 0.03 | Lwrist (+0.270,+0.274,+0.911) | Rwrist_x +0.147 | success_now=True streak=132
+[CTRL] RETREAT_UP step  798 | wheel (+0.405,+0.379,+0.727) |v|max 0.03 | Lwrist (+0.271,+0.274,+0.912) | Rwrist_x +0.147 | success_now=True streak=133
+[CTRL] RETREAT_UP step  799 | wheel (+0.405,+0.379,+0.727) |v|max 0.03 | Lwrist (+0.272,+0.275,+0.914) | Rwrist_x +0.147 | success_now=True streak=134
+[CTRL] RETREAT_UP step  800 | wheel (+0.405,+0.379,+0.728) |v|max 0.03 | Lwrist (+0.272,+0.275,+0.915) | Rwrist_x +0.147 | success_now=True streak=135
+[CTRL] RETREAT_UP step  801 | wheel (+0.406,+0.379,+0.729) |v|max 0.03 | Lwrist (+0.273,+0.275,+0.917) | Rwrist_x +0.147 | success_now=True streak=136
+[CTRL] RETREAT_UP step  802 | wheel (+0.406,+0.379,+0.730) |v|max 0.03 | Lwrist (+0.274,+0.275,+0.918) | Rwrist_x +0.147 | success_now=True streak=137
+[CTRL] RETREAT_UP step  803 | wheel (+0.406,+0.379,+0.730) |v|max 0.02 | Lwrist (+0.274,+0.275,+0.920) | Rwrist_x +0.147 | success_now=True streak=138
+[CTRL] RETREAT_UP step  804 | wheel (+0.406,+0.379,+0.730) |v|max 0.02 | Lwrist (+0.275,+0.275,+0.922) | Rwrist_x +0.147 | success_now=True streak=139
+[CTRL] RETREAT_UP step  805 | wheel (+0.407,+0.379,+0.731) |v|max 0.03 | Lwrist (+0.276,+0.276,+0.923) | Rwrist_x +0.147 | success_now=True streak=140
+[CTRL] RETREAT_UP step  806 | wheel (+0.407,+0.379,+0.732) |v|max 0.03 | Lwrist (+0.276,+0.276,+0.925) | Rwrist_x +0.147 | success_now=True streak=141
+[CTRL] RETREAT_UP step  807 | wheel (+0.407,+0.379,+0.732) |v|max 0.03 | Lwrist (+0.277,+0.276,+0.927) | Rwrist_x +0.147 | success_now=True streak=142
+[CTRL] RETREAT_UP step  808 | wheel (+0.407,+0.379,+0.733) |v|max 0.03 | Lwrist (+0.278,+0.276,+0.928) | Rwrist_x +0.147 | success_now=True streak=143
+[CTRL] RETREAT_UP step  809 | wheel (+0.408,+0.379,+0.733) |v|max 0.03 | Lwrist (+0.278,+0.276,+0.930) | Rwrist_x +0.147 | success_now=True streak=144
+[CTRL] RETREAT_UP step  810 | wheel (+0.408,+0.379,+0.734) |v|max 0.03 | Lwrist (+0.279,+0.277,+0.932) | Rwrist_x +0.147 | success_now=True streak=145
+[CTRL] RETREAT_UP step  811 | wheel (+0.408,+0.379,+0.734) |v|max 0.03 | Lwrist (+0.280,+0.277,+0.934) | Rwrist_x +0.147 | success_now=True streak=146
+[CTRL] RETREAT_UP step  812 | wheel (+0.408,+0.379,+0.735) |v|max 0.02 | Lwrist (+0.280,+0.277,+0.936) | Rwrist_x +0.147 | success_now=True streak=147
+[CTRL] RETREAT_UP step  813 | wheel (+0.409,+0.379,+0.735) |v|max 0.03 | Lwrist (+0.281,+0.277,+0.938) | Rwrist_x +0.147 | success_now=True streak=148
+[CTRL] RETREAT_UP step  814 | wheel (+0.409,+0.379,+0.736) |v|max 0.02 | Lwrist (+0.282,+0.277,+0.939) | Rwrist_x +0.147 | success_now=True streak=149
+[CTRL] RETREAT_UP step  815 | wheel (+0.409,+0.379,+0.736) |v|max 0.02 | Lwrist (+0.282,+0.277,+0.941) | Rwrist_x +0.147 | success_now=True streak=150
+[CTRL] RETREAT_UP step  816 | wheel (+0.409,+0.378,+0.737) |v|max 0.02 | Lwrist (+0.283,+0.277,+0.943) | Rwrist_x +0.147 | success_now=True streak=151
+[CTRL] RETREAT_UP step  817 | wheel (+0.410,+0.378,+0.737) |v|max 0.03 | Lwrist (+0.284,+0.278,+0.945) | Rwrist_x +0.147 | success_now=True streak=152
+[CTRL] RETREAT_UP step  818 | wheel (+0.410,+0.378,+0.737) |v|max 0.03 | Lwrist (+0.284,+0.278,+0.947) | Rwrist_x +0.147 | success_now=True streak=153
+[CTRL] RETREAT_UP step  819 | wheel (+0.410,+0.378,+0.738) |v|max 0.03 | Lwrist (+0.285,+0.278,+0.949) | Rwrist_x +0.147 | success_now=True streak=154
+[CTRL] RETREAT_UP step  820 | wheel (+0.410,+0.378,+0.738) |v|max 0.03 | Lwrist (+0.286,+0.278,+0.951) | Rwrist_x +0.147 | success_now=True streak=155
+[CTRL] RETREAT_UP step  821 | wheel (+0.411,+0.378,+0.739) |v|max 0.02 | Lwrist (+0.286,+0.278,+0.953) | Rwrist_x +0.147 | success_now=True streak=156
+[CTRL] RETREAT_UP step  822 | wheel (+0.411,+0.378,+0.738) |v|max 0.06 | Lwrist (+0.287,+0.278,+0.956) | Rwrist_x +0.147 | success_now=True streak=157
+[CTRL] RETREAT_UP step  823 | wheel (+0.411,+0.378,+0.738) |v|max 0.01 | Lwrist (+0.288,+0.278,+0.958) | Rwrist_x +0.147 | success_now=True streak=158
+[CTRL] RETREAT_UP step  824 | wheel (+0.411,+0.378,+0.737) |v|max 0.01 | Lwrist (+0.288,+0.278,+0.960) | Rwrist_x +0.147 | success_now=True streak=159
+[CTRL] RETREAT_UP step  825 | wheel (+0.411,+0.378,+0.737) |v|max 0.02 | Lwrist (+0.289,+0.278,+0.962) | Rwrist_x +0.147 | success_now=True streak=160
+[CTRL] RETREAT_UP step  826 | wheel (+0.412,+0.377,+0.736) |v|max 0.01 | Lwrist (+0.289,+0.278,+0.965) | Rwrist_x +0.147 | success_now=True streak=161
+[CTRL] RETREAT_UP step  827 | wheel (+0.412,+0.377,+0.736) |v|max 0.01 | Lwrist (+0.290,+0.279,+0.967) | Rwrist_x +0.147 | success_now=True streak=162
+[CTRL] RETREAT_UP step  828 | wheel (+0.412,+0.377,+0.735) |v|max 0.01 | Lwrist (+0.291,+0.279,+0.969) | Rwrist_x +0.147 | success_now=True streak=163
+[CTRL] RETREAT_UP step  829 | wheel (+0.413,+0.377,+0.733) |v|max 0.08 | Lwrist (+0.291,+0.279,+0.972) | Rwrist_x +0.147 | success_now=True streak=164
+[CTRL] RETREAT_UP step  830 | wheel (+0.413,+0.376,+0.729) |v|max 0.20 | Lwrist (+0.292,+0.279,+0.974) | Rwrist_x +0.147 | success_now=False streak=0
+[CTRL] RETREAT_UP step  831 | wheel (+0.413,+0.376,+0.722) |v|max 0.33 | Lwrist (+0.292,+0.279,+0.977) | Rwrist_x +0.147 | success_now=False streak=0
+[CTRL] RETREAT_UP step  832 | wheel (+0.413,+0.375,+0.719) |v|max 0.14 | Lwrist (+0.293,+0.279,+0.979) | Rwrist_x +0.147 | success_now=True streak=1
+[CTRL] RETREAT_UP step  833 | wheel (+0.412,+0.375,+0.717) |v|max 0.14 | Lwrist (+0.293,+0.279,+0.982) | Rwrist_x +0.147 | success_now=True streak=2
+[CTRL] RETREAT_UP step  834 | wheel (+0.411,+0.374,+0.714) |v|max 0.15 | Lwrist (+0.294,+0.279,+0.984) | Rwrist_x +0.147 | success_now=True streak=3
+[CTRL] RETREAT_UP step  835 | wheel (+0.411,+0.373,+0.712) |v|max 0.16 | Lwrist (+0.294,+0.279,+0.987) | Rwrist_x +0.147 | success_now=True streak=4
+[CTRL] RETREAT  step  836 | wheel (+0.410,+0.373,+0.709) |v|max 0.18 | Lwrist (+0.294,+0.279,+0.987) | Rwrist_x +0.147 | success_now=True streak=5
+[CTRL] RETREAT  step  837 | wheel (+0.410,+0.373,+0.707) |v|max 0.15 | Lwrist (+0.292,+0.279,+0.986) | Rwrist_x +0.147 | success_now=True streak=6
+[CTRL] RETREAT  step  838 | wheel (+0.410,+0.373,+0.707) |v|max 0.13 | Lwrist (+0.291,+0.280,+0.984) | Rwrist_x +0.147 | success_now=True streak=7
+[CTRL] RETREAT  step  839 | wheel (+0.410,+0.373,+0.707) |v|max 0.02 | Lwrist (+0.290,+0.281,+0.983) | Rwrist_x +0.147 | success_now=True streak=8
+[CTRL] RETREAT  step  840 | wheel (+0.410,+0.373,+0.707) |v|max 0.01 | Lwrist (+0.288,+0.282,+0.981) | Rwrist_x +0.147 | success_now=True streak=9
+[CTRL] RETREAT  step  841 | wheel (+0.410,+0.373,+0.707) |v|max 0.01 | Lwrist (+0.287,+0.283,+0.980) | Rwrist_x +0.147 | success_now=True streak=10
+[CTRL] RETREAT  step  842 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.285,+0.283,+0.980) | Rwrist_x +0.147 | success_now=True streak=11
+[CTRL] RETREAT  step  843 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.284,+0.283,+0.979) | Rwrist_x +0.147 | success_now=True streak=12
+[CTRL] RETREAT  step  844 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.283,+0.283,+0.978) | Rwrist_x +0.147 | success_now=True streak=13
+[CTRL] RETREAT  step  845 | wheel (+0.410,+0.373,+0.707) |v|max 0.01 | Lwrist (+0.281,+0.283,+0.977) | Rwrist_x +0.147 | success_now=True streak=14
+[CTRL] RETREAT  step  846 | wheel (+0.410,+0.373,+0.707) |v|max 0.01 | Lwrist (+0.279,+0.284,+0.976) | Rwrist_x +0.147 | success_now=True streak=15
+[CTRL] RETREAT  step  847 | wheel (+0.410,+0.373,+0.707) |v|max 0.02 | Lwrist (+0.277,+0.284,+0.975) | Rwrist_x +0.147 | success_now=True streak=16
+[CTRL] RETREAT  step  848 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.274,+0.284,+0.974) | Rwrist_x +0.147 | success_now=True streak=17
+[CTRL] RETREAT  step  849 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.272,+0.285,+0.973) | Rwrist_x +0.147 | success_now=True streak=18
+[CTRL] RETREAT  step  850 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.270,+0.284,+0.972) | Rwrist_x +0.147 | success_now=True streak=19
+[CTRL] RETREAT  step  851 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.267,+0.284,+0.972) | Rwrist_x +0.147 | success_now=True streak=20
+[CTRL] RETREAT  step  852 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.264,+0.284,+0.971) | Rwrist_x +0.147 | success_now=True streak=21
+[CTRL] RETREAT  step  853 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.262,+0.283,+0.970) | Rwrist_x +0.148 | success_now=True streak=22
+[CTRL] RETREAT  step  854 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.258,+0.283,+0.970) | Rwrist_x +0.148 | success_now=True streak=23
+[CTRL] RETREAT  step  855 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.255,+0.283,+0.969) | Rwrist_x +0.148 | success_now=True streak=24
+[CTRL] RETREAT  step  856 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.251,+0.282,+0.968) | Rwrist_x +0.148 | success_now=True streak=25
+[CTRL] RETREAT  step  857 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.247,+0.282,+0.967) | Rwrist_x +0.148 | success_now=True streak=26
+[CTRL] RETREAT  step  858 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.243,+0.281,+0.967) | Rwrist_x +0.148 | success_now=True streak=27
+[CTRL] RETREAT  step  859 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.240,+0.279,+0.968) | Rwrist_x +0.148 | success_now=True streak=28
+[CTRL] RETREAT  step  860 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.236,+0.278,+0.968) | Rwrist_x +0.148 | success_now=True streak=29
+[CTRL] RETREAT  step  861 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.232,+0.276,+0.968) | Rwrist_x +0.148 | success_now=True streak=30
+[CTRL] RETREAT  step  862 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.228,+0.275,+0.967) | Rwrist_x +0.149 | success_now=True streak=31
+[CTRL] RETREAT  step  863 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.224,+0.275,+0.966) | Rwrist_x +0.148 | success_now=True streak=32
+[CTRL] RETREAT  step  864 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.220,+0.274,+0.966) | Rwrist_x +0.148 | success_now=True streak=33
+[CTRL] RETREAT  step  865 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.215,+0.273,+0.965) | Rwrist_x +0.148 | success_now=True streak=34
+[CTRL] RETREAT  step  866 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.211,+0.272,+0.965) | Rwrist_x +0.149 | success_now=True streak=35
+[CTRL] RETREAT  step  867 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.207,+0.271,+0.965) | Rwrist_x +0.149 | success_now=True streak=36
+[CTRL] RETREAT  step  868 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.203,+0.270,+0.965) | Rwrist_x +0.149 | success_now=True streak=37
+[CTRL] RETREAT  step  869 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.199,+0.269,+0.965) | Rwrist_x +0.149 | success_now=True streak=38
+[CTRL] RETREAT  step  870 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.194,+0.268,+0.964) | Rwrist_x +0.148 | success_now=True streak=39
+[CTRL] RETREAT  step  871 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.189,+0.268,+0.964) | Rwrist_x +0.148 | success_now=True streak=40
+[CTRL] RETREAT  step  872 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.185,+0.267,+0.963) | Rwrist_x +0.148 | success_now=True streak=41
+[CTRL] RETREAT  step  873 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.181,+0.265,+0.963) | Rwrist_x +0.148 | success_now=True streak=42
+[CTRL] RETREAT  step  874 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.177,+0.264,+0.963) | Rwrist_x +0.148 | success_now=True streak=43
+[CTRL] RETREAT  step  875 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.172,+0.263,+0.963) | Rwrist_x +0.148 | success_now=True streak=44
+[CTRL] RETREAT  step  876 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.168,+0.262,+0.962) | Rwrist_x +0.148 | success_now=True streak=45
+[CTRL] RETREAT  step  877 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.164,+0.261,+0.962) | Rwrist_x +0.148 | success_now=True streak=46
+[CTRL] RETREAT  step  878 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.159,+0.260,+0.961) | Rwrist_x +0.148 | success_now=True streak=47
+[CTRL] RETREAT  step  879 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.155,+0.259,+0.961) | Rwrist_x +0.148 | success_now=True streak=48
+[CTRL] RETREAT  step  880 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.151,+0.258,+0.961) | Rwrist_x +0.148 | success_now=True streak=49
+[CTRL] RETREAT  step  881 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.146,+0.257,+0.960) | Rwrist_x +0.148 | success_now=True streak=50
+[CTRL] RETREAT  step  882 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.142,+0.255,+0.960) | Rwrist_x +0.148 | success_now=True streak=51
+[CTRL] RETREAT  step  883 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.138,+0.254,+0.960) | Rwrist_x +0.148 | success_now=True streak=52
+[CTRL] RETREAT  step  884 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.133,+0.253,+0.959) | Rwrist_x +0.148 | success_now=True streak=53
+[CTRL] RETREAT  step  885 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.129,+0.252,+0.959) | Rwrist_x +0.148 | success_now=True streak=54
+[CTRL] RETREAT  step  886 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.125,+0.251,+0.959) | Rwrist_x +0.148 | success_now=True streak=55
+[CTRL] RETREAT  step  887 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.121,+0.250,+0.958) | Rwrist_x +0.148 | success_now=True streak=56
+[CTRL] RETREAT  step  888 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.116,+0.249,+0.958) | Rwrist_x +0.148 | success_now=True streak=57
+[CTRL] RETREAT  step  889 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.112,+0.248,+0.958) | Rwrist_x +0.148 | success_now=True streak=58
+[CTRL] RETREAT  step  890 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.108,+0.247,+0.957) | Rwrist_x +0.149 | success_now=True streak=59
+[CTRL] RETREAT  step  891 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.103,+0.246,+0.957) | Rwrist_x +0.149 | success_now=True streak=60
+[CTRL] RETREAT  step  892 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.099,+0.245,+0.957) | Rwrist_x +0.149 | success_now=True streak=61
+[CTRL] RETREAT  step  893 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.095,+0.244,+0.956) | Rwrist_x +0.149 | success_now=True streak=62
+[CTRL] RETREAT  step  894 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.090,+0.243,+0.956) | Rwrist_x +0.149 | success_now=True streak=63
+[CTRL] RETREAT  step  895 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.086,+0.242,+0.956) | Rwrist_x +0.149 | success_now=True streak=64
+[CTRL] RETREAT  step  896 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.082,+0.240,+0.955) | Rwrist_x +0.149 | success_now=True streak=65
+[CTRL] RETREAT  step  897 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.077,+0.239,+0.955) | Rwrist_x +0.149 | success_now=True streak=66
+[CTRL] RETREAT  step  898 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.073,+0.238,+0.955) | Rwrist_x +0.149 | success_now=True streak=67
+[CTRL] RETREAT  step  899 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.069,+0.237,+0.954) | Rwrist_x +0.149 | success_now=True streak=68
+[CTRL] RETREAT  step  900 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.064,+0.236,+0.954) | Rwrist_x +0.149 | success_now=True streak=69
+[CTRL] RETREAT  step  901 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.060,+0.235,+0.953) | Rwrist_x +0.149 | success_now=True streak=70
+[CTRL] RETREAT  step  902 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.056,+0.234,+0.953) | Rwrist_x +0.149 | success_now=True streak=71
+[CTRL] RETREAT  step  903 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.051,+0.233,+0.953) | Rwrist_x +0.149 | success_now=True streak=72
+[CTRL] RETREAT  step  904 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.047,+0.232,+0.952) | Rwrist_x +0.149 | success_now=True streak=73
+[CTRL] RETREAT  step  905 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.043,+0.231,+0.952) | Rwrist_x +0.149 | success_now=True streak=74
+[CTRL] RETREAT  step  906 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.039,+0.230,+0.952) | Rwrist_x +0.149 | success_now=True streak=75
+[CTRL] RETREAT  step  907 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.034,+0.229,+0.951) | Rwrist_x +0.149 | success_now=True streak=76
+[CTRL] RETREAT  step  908 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.030,+0.228,+0.951) | Rwrist_x +0.149 | success_now=True streak=77
+[CTRL] RETREAT  step  909 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.026,+0.227,+0.951) | Rwrist_x +0.149 | success_now=True streak=78
+[CTRL] RETREAT  step  910 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.021,+0.226,+0.950) | Rwrist_x +0.149 | success_now=True streak=79
+[CTRL] RETREAT  step  911 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.017,+0.225,+0.950) | Rwrist_x +0.149 | success_now=True streak=80
+[CTRL] RETREAT  step  912 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.013,+0.224,+0.950) | Rwrist_x +0.149 | success_now=True streak=81
+[CTRL] RETREAT  step  913 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.008,+0.223,+0.949) | Rwrist_x +0.149 | success_now=True streak=82
+[CTRL] RETREAT  step  914 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.004,+0.222,+0.949) | Rwrist_x +0.149 | success_now=True streak=83
+[CTRL] RETREAT  step  915 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=84
+[CTRL] SETTLE   step  916 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.002,+0.221,+0.948) | Rwrist_x +0.148 | success_now=True streak=85
+[CTRL] SETTLE   step  917 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.221,+0.948) | Rwrist_x +0.149 | success_now=True streak=86
+[CTRL] SETTLE   step  918 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.221,+0.948) | Rwrist_x +0.149 | success_now=True streak=87
+[CTRL] SETTLE   step  919 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.221,+0.948) | Rwrist_x +0.149 | success_now=True streak=88
+[CTRL] SETTLE   step  920 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=89
+[CTRL] SETTLE   step  921 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.949) | Rwrist_x +0.149 | success_now=True streak=90
+[CTRL] SETTLE   step  922 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=91
+[CTRL] SETTLE   step  923 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=92
+[CTRL] SETTLE   step  924 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=93
+[CTRL] SETTLE   step  925 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=94
+[CTRL] SETTLE   step  926 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=95
+[CTRL] SETTLE   step  927 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.949) | Rwrist_x +0.149 | success_now=True streak=96
+[CTRL] SETTLE   step  928 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.949) | Rwrist_x +0.149 | success_now=True streak=97
+[CTRL] SETTLE   step  929 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=98
+[CTRL] SETTLE   step  930 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=99
+[CTRL] SETTLE   step  931 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (+0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=100
+[CTRL] SETTLE   step  932 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=101
+[CTRL] SETTLE   step  933 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.949) | Rwrist_x +0.149 | success_now=True streak=102
+[CTRL] SETTLE   step  934 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=103
+[CTRL] SETTLE   step  935 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=104
+[CTRL] SETTLE   step  936 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=105
+[CTRL] SETTLE   step  937 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=106
+[CTRL] SETTLE   step  938 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=107
+[CTRL] SETTLE   step  939 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=108
+[CTRL] SETTLE   step  940 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=109
+[CTRL] SETTLE   step  941 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=110
+[CTRL] SETTLE   step  942 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=111
+[CTRL] SETTLE   step  943 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=112
+[CTRL] SETTLE   step  944 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=113
+[CTRL] SETTLE   step  945 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=114
+[CTRL] SETTLE   step  946 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=115
+[CTRL] SETTLE   step  947 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=116
+[CTRL] SETTLE   step  948 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=117
+[CTRL] SETTLE   step  949 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=118
+[CTRL] SETTLE   step  950 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=119
+[CTRL] SETTLE   step  951 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=120
+[CTRL] SETTLE   step  952 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=121
+[CTRL] SETTLE   step  953 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=122
+[CTRL] SETTLE   step  954 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=123
+[CTRL] SETTLE   step  955 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=124
+[CTRL] SETTLE   step  956 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=125
+[CTRL] SETTLE   step  957 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=126
+[CTRL] SETTLE   step  958 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=127
+[CTRL] SETTLE   step  959 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=128
+[CTRL] SETTLE   step  960 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=129
+[CTRL] SETTLE   step  961 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=130
+[CTRL] SETTLE   step  962 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=131
+[CTRL] SETTLE   step  963 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=132
+[CTRL] SETTLE   step  964 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=133
+[CTRL] SETTLE   step  965 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=134
+[CTRL] SETTLE   step  966 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=135
+[CTRL] SETTLE   step  967 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=136
+[CTRL] SETTLE   step  968 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=137
+[CTRL] SETTLE   step  969 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=138
+[CTRL] SETTLE   step  970 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=139
+[CTRL] SETTLE   step  971 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=140
+[CTRL] SETTLE   step  972 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=141
+[CTRL] SETTLE   step  973 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=142
+[CTRL] SETTLE   step  974 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=143
+[CTRL] SETTLE   step  975 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=144
+[CTRL] SETTLE   step  976 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=145
+[CTRL] SETTLE   step  977 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=146
+[CTRL] SETTLE   step  978 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=147
+[CTRL] SETTLE   step  979 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=148
+[CTRL] SETTLE   step  980 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=149
+[CTRL] SETTLE   step  981 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=150
+[CTRL] SETTLE   step  982 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=151
+[CTRL] SETTLE   step  983 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=152
+[CTRL] SETTLE   step  984 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=153
+[CTRL] SETTLE   step  985 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=154
+[CTRL] SETTLE   step  986 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=155
+[CTRL] SETTLE   step  987 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=156
+[CTRL] SETTLE   step  988 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=157
+[CTRL] SETTLE   step  989 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=158
+[CTRL] SETTLE   step  990 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=159
+[CTRL] SETTLE   step  991 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=160
+[CTRL] SETTLE   step  992 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=161
+[CTRL] SETTLE   step  993 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=162
+[CTRL] SETTLE   step  994 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=163
+[CTRL] SETTLE   step  995 | wheel (+0.410,+0.373,+0.707) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=True streak=164
+[CTRL] RESULT: SUCCESS after 995 steps (19.9 s)
+[CTRL] video saved under: /home/yilang/research/IsaacLab-v6/Fable_5/G1_Upper_body_IK/videos

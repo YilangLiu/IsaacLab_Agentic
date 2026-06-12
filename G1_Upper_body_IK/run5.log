@@ -1,0 +1,191 @@
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/yilang/research/IsaacLab-v6/apps/isaaclab.python.headless.rendering.kit
+Loading user config located at: '/home/yilang/research/IsaacLab-v6/env_isaaclab/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/yilang/research/IsaacLab-v6/env_isaaclab/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260612_120332.log
+2026-06-12T16:03:32Z [80ms] [Warning] [carb.windowing-glfw.gamepad] Joystick with unknown remapping detected (will be ignored):  Logitech G502 [030000006d0400007f40000011010000]
+2026-06-12T16:03:32Z [298ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: AMD Ryzen 7 9800X3D 8-Core Processor (RADV RAPHAEL_MENDOCINO)
+2026-06-12T16:03:32Z [298ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: AMD Ryzen 7 9800X3D 8-Core Processor (RADV RAPHAEL_MENDOCINO)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.159.03    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5090          | Yes: 0 |     | 32607   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2b85      | 285073a4.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | AMD Ryzen 7 9800X3D 8-Core Pro.. |        |     | 64892   MB | 1002      | 0          |
+|     |                                  |        |     |            | 13c0      | 00000000.. |
+|     |                                  |        |     |            | 78        |            |
+|=============================================================================================|
+| OS: 24.04.4 LTS (Noble Numbat) ubuntu, Version: 24.04.4, Kernel: 6.17.0-35-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101011 (1.21.1.11)
+| Processor: AMD Ryzen 7 9800X3D 8-Core Processor
+| Cores: 8 | Logical Cores: 16
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 190581 | Free Memory: 180697
+| Total Page/Swap (MB): 8191 | Free Page/Swap: 8191
+|---------------------------------------------------------------------------------------------|
+2026-06-12T16:03:32Z [522ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-06-12T16:03:32Z [531ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+2026-06-12T16:03:32Z [531ms] [Warning] [gpu.foundation.plugin] Detected IOMMU is enabled. Running CUDA peer-to-peer bandwidth and latency validation.
+Unidirectional P2P=Enabled Bandwidth (P2P Writes) Matrix (GB/s)
+   D\D     0 
+     0 1514.05 
+P2P=Enabled Latency (P2P Writes) Matrix (us)
+   GPU     0 
+     0   2.06 
+
+   CPU     0 
+     0   1.87 
+2026-06-12T16:03:33Z [1,103ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-06-12T16:03:33Z [1,261ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+2026-06-12T16:03:33Z [1,266ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2026-06-12T16:03:34Z [2,334ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-06-12T16:03:34Z [2,411ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-06-12T16:03:34Z [2,411ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-06-12T16:03:34Z [2,411ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-06-12T16:03:35Z [3,088ms] [Warning] [isaaclab.app.app_launcher] Due to an issue with Pinocchio and pxr.Gf.Matrix4d, patching the Matrix4d constructor to convert arguments into a list of floats.
+2026-06-12T16:03:36Z [4,440ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 7
+
+[INFO]: Parsing configuration from: <class 'isaaclab_tasks.manager_based.locomanipulation.pick_place.fixed_base_upper_body_ik_g1_env_cfg.FixedBaseUpperBodyIKG1EnvCfg'>
+2026-06-12T16:03:37Z [5,402ms] [Warning] [isaaclab.envs.manager_based_env] Seed not set for the environment. The environment creation may not be deterministic.
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-06-12_12-03-37.log[0m
+[36m======================================================================================[0m
+
+[33m12:03:37 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : None
+	Physics step-size     : 0.005
+	Rendering step-size   : 0.01
+	Environment step-size : 0.02
+[33m12:03:37 [manager_based_env.py] WARNING: The render interval (2) is smaller than the decimation (4). Multiple render calls will happen for each environment step. If this is not intended, set the render interval to be equal to the decimation.[0m
+[INFO]: Time taken for scene creation : 1.067794 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 2.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : True
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+[33m12:03:39 [actuator_pd.py] WARNING: The <ImplicitActuatorCfg> object has a value for 'effort_limit'. This parameter will be removed in the future. To set the effort limit, please use 'effort_limit_sim' instead.[0m
+[33m12:03:39 [actuator_pd.py] WARNING: The <ImplicitActuatorCfg> object has a value for 'velocity_limit'. Previously, although this value was specified, it was not getting used by implicit actuators. Since this parameter affects the simulation behavior, we continue to not use it. This parameter will be removed in the future. To set the velocity limit, please use 'velocity_limit_sim' instead.[0m
+[INFO]: Time taken for simulation start : 0.827606 seconds
+[INFO] Command Manager:  <CommandManager> contains 0 active terms.
++------------------------+
+|  Active Command Terms  |
++--------+-------+-------+
+| Index  | Name  |  Type |
++--------+-------+-------+
++--------+-------+-------+
+
+[INFO] Event Manager:  <EventManager> contains 1 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++--------+----------------------------+
+| Index  | Name                       |
++--------+----------------------------+
+|   0    | reset_scene_to_default     |
++--------+----------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++-----------------------------------+
+|  Active Action Terms (shape: 28)  |
++-------+---------------+-----------+
+| Index | Name          | Dimension |
++-------+---------------+-----------+
+|   0   | upper_body_ik |        28 |
++-------+---------------+-----------+
+
+[INFO] Observation Manager: <ObservationManager> contains 1 groups.
++-----------------------------------------------+
+|  Active Observation Terms in Group: 'policy'  |
++---------+------------------------+------------+
+|  Index  | Name                   |   Shape    |
++---------+------------------------+------------+
+|    0    | actions                |   (28,)    |
+|    1    | robot_joint_pos        |   (43,)    |
+|    2    | robot_root_pos         |    (3,)    |
+|    3    | robot_root_rot         |    (4,)    |
+|    4    | object_pos             |    (3,)    |
+|    5    | object_rot             |    (4,)    |
+|    6    | robot_links_state      |  (46, 13)  |
+|    7    | left_eef_pos           |    (3,)    |
+|    8    | left_eef_quat          |    (4,)    |
+|    9    | right_eef_pos          |    (3,)    |
+|    10   | right_eef_quat         |    (4,)    |
+|    11   | hand_joint_state       |   (14,)    |
+|    12   | head_joint_state       |    (0,)    |
+|    13   | object                 |   (13,)    |
++---------+------------------------+------------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 2 active terms.
++------------------------------------+
+|      Active Termination Terms      |
++-------+-----------------+----------+
+| Index | Name            | Time Out |
++-------+-----------------+----------+
+|   0   | time_out        |   True   |
+|   1   | object_dropping |  False   |
++-------+-----------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 0 active terms.
++-----------------------+
+|  Active Reward Terms  |
++-------+------+--------+
+| Index | Name | Weight |
++-------+------+--------+
++-------+------+--------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+/home/yilang/research/IsaacLab-v6/env_isaaclab/lib/python3.11/site-packages/gymnasium/wrappers/rendering.py:293: UserWarning: [33mWARN: Overwriting existing videos at /home/yilang/research/IsaacLab-v6/Fable_5/G1_Upper_body_IK/videos folder (try specifying a different `video_folder` for the `RecordVideo` wrapper if this is not desired)[0m
+  logger.warn(
+[CTRL] wheel at [-0.35  0.45  0.7 ], left wrist [-0.149  0.2    0.845], right wrist [0.149 0.2   0.845]
+2026-06-12T16:03:40Z [7,967ms] [Warning] [omni.fabric.plugin] getAttributeCount called on non-existent path /World/envs/env_0/Robot/right_hand/right_hand_palm_link/collisions/right_hand_palm_link
+2026-06-12T16:03:40Z [7,967ms] [Warning] [omni.fabric.plugin] getTypes called on non-existent path /World/envs/env_0/Robot/right_hand/right_hand_palm_link/collisions/right_hand_palm_link
+2026-06-12T16:03:41Z [9,145ms] [Warning] [omni.syntheticdata.plugin] OgnSdPostRenderVarToHost : rendervar copy from texture directly to host buffer is counter-performant. Please use copy from texture to device buffer first.
+[CTRL] RAISE    step   50 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.183,+0.234,+0.913) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] STAGE    step  100 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.293,+0.226,+0.910) | Rwrist_x +0.149 | success_now=False streak=0
+2026-06-12T16:03:44Z [12,450ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+[CTRL] STAGE    step  150 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.472,+0.179,+0.835) | Rwrist_x +0.150 | success_now=False streak=0
+[CTRL] ADVANCE  step  200 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.479,+0.161,+0.810) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] ADVANCE  step  250 | wheel (-0.350,+0.450,+0.698) |v|max 0.00 | Lwrist (-0.460,+0.200,+0.807) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] SCOOP    step  300 | wheel (-0.350,+0.450,+0.699) |v|max 0.00 | Lwrist (-0.446,+0.227,+0.802) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] CLAMP    step  350 | wheel (-0.346,+0.443,+0.700) |v|max 0.01 | Lwrist (-0.452,+0.237,+0.821) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] LIFT     step  400 | wheel (-0.371,+0.417,+0.714) |v|max 0.13 | Lwrist (-0.463,+0.239,+0.853) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY    step  450 | wheel (-0.374,+0.419,+0.820) |v|max 0.19 | Lwrist (-0.464,+0.248,+0.965) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY    step  500 | wheel (-0.128,+0.441,+0.829) |v|max 0.25 | Lwrist (-0.223,+0.276,+0.976) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY2   step  550 | wheel (+0.116,+0.462,+0.834) |v|max 0.08 | Lwrist (+0.012,+0.301,+0.977) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY2   step  600 | wheel (+0.257,+0.441,+0.831) |v|max 0.12 | Lwrist (+0.130,+0.298,+0.975) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] CARRY2   step  650 | wheel (+0.390,+0.417,+0.830) |v|max 0.10 | Lwrist (+0.244,+0.295,+0.975) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] LOWER    step  700 | wheel (+0.419,+0.391,+0.777) |v|max 0.06 | Lwrist (+0.267,+0.278,+0.923) | Rwrist_x +0.147 | success_now=True streak=0
+[CTRL] RELEASE  step  750 | wheel (+0.397,+0.377,+0.717) |v|max 0.04 | Lwrist (+0.242,+0.263,+0.861) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] RELEASE  step  800 | wheel (+0.400,+0.380,+0.720) |v|max 0.00 | Lwrist (+0.254,+0.270,+0.886) | Rwrist_x +0.148 | success_now=False streak=0
+[CTRL] RETREAT  step  850 | wheel (+0.396,+0.379,+0.708) |v|max 0.07 | Lwrist (+0.207,+0.272,+0.898) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] RETREAT  step  900 | wheel (+0.396,+0.379,+0.708) |v|max 0.00 | Lwrist (+0.059,+0.235,+0.934) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] SETTLE   step  950 | wheel (+0.396,+0.379,+0.708) |v|max 0.00 | Lwrist (-0.000,+0.220,+0.948) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] SETTLE   step 1000 | wheel (-0.350,+0.450,+0.700) |v|max 0.00 | Lwrist (-0.149,+0.200,+0.845) | Rwrist_x +0.149 | success_now=False streak=0
+[CTRL] RESULT: FAIL (timeout) after 1000 steps (20.0 s)
+[CTRL] video saved under: /home/yilang/research/IsaacLab-v6/Fable_5/G1_Upper_body_IK/videos
