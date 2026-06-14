@@ -1,30 +1,68 @@
-# Fable_5 — Scripted solutions for two Isaac Lab manipulation tasks
+# IsaacLab_Agentic
 
-Two Isaac Lab tasks solved with hand-scripted controllers (no RL training, no
-teleop), each with executable code and a rendered video of the successful
-trajectory:
+Two Isaac Lab manipulation tasks, each solved **from scratch by two different
+coding agents** — **Fable 5** and **Opus** — using hand-scripted controllers
+(no RL training, no teleoperation). Both agents were given the same task briefs
+(see [`Fable_5/prompt.txt`](Fable_5/prompt.txt)) and produced their own
+executable controller plus a rendered video of the successful trajectory.
 
-| Task | Robot | Goal | Result | Video |
-|---|---|---|---|---|
-| [`Isaac-AutoMate-Assembly-Direct-v0`](AutoMate-Assembly-Direct-v0/) | Franka | Insert an 8 mm plug into its socket (~0.11 mm clearance) | 4/4 envs succeed | [`plug_insertion_success.mp4`](AutoMate-Assembly-Direct-v0/plug_insertion_success.mp4) |
-| [`Isaac-PickPlace-FixedBaseUpperBodyIK-G1-Abs-v0`](G1_Upper_body_IK/) | Unitree G1 humanoid (fixed base, trihands) | Pick up a steering wheel and place it in a basket | SUCCESS (env criterion holds through episode end) | [`g1_pick_place_success.mp4`](G1_Upper_body_IK/g1_pick_place_success.mp4) |
+The point of this repo is a **side-by-side comparison**: the same two tasks,
+two independent agentic solutions, so you can diff the strategies, the code, and
+the debugging notes each agent left behind.
 
-Each task folder has its own README with the controller design and the
-debugging lessons learned along the way.
+| Agent | Subfolder | Notes |
+|---|---|---|
+| Fable 5 | [`Fable_5/`](Fable_5/) | Per-task READMEs with design + lessons learned |
+| Opus | [`Opus/`](Opus/) | G1 solution ships an empirical [`LEARNINGS.md`](Opus/G1_Upper_body_IK/LEARNINGS.md) and probe/alternate-strategy scripts |
+
+## The tasks
+
+| Task | Robot | Goal |
+|---|---|---|
+| `Isaac-AutoMate-Assembly-Direct-v0` | Franka | Insert an 8 mm plug into its socket (~0.11 mm clearance) |
+| `Isaac-PickPlace-FixedBaseUpperBodyIK-G1-Abs-v0` | Unitree G1 humanoid (fixed base, trihands) | Pick up a steering wheel and place it in a basket |
+
+Both agents solve both tasks. Each solution is verified with the environment's
+own success criterion (`check_plug_inserted_in_socket` for AutoMate,
+`task_done_pick_place` for G1) and ships a success video.
+
+## Layout
+
+```
+IsaacLab_Agentic/
+├── Fable_5/
+│   ├── README.md                          # Fable 5's top-level write-up
+│   ├── prompt.txt                         # the original task briefs given to both agents
+│   ├── AutoMate-Assembly-Direct-v0/
+│   │   ├── insert_plug.py                  # main controller
+│   │   ├── plug_insertion_success.mp4      # success video
+│   │   ├── README.md, smoke_test.py, *.log, videos/
+│   └── G1_Upper_body_IK/
+│       ├── pick_place_wheel.py             # main controller
+│       ├── g1_pick_place_success.mp4       # success video
+│       └── README.md, smoke_test.py, *.log, videos/
+└── Opus/
+    ├── AutoMate-Assembly-Direct-v0/
+    │   ├── insert_plug.py                  # main controller
+    │   └── successful_insertion.mp4        # success video
+    └── G1_Upper_body_IK/
+        ├── solve_pickplace.py              # main controller (Strategy B: bimanual handoff)
+        ├── strat_A_nudge.py                # alternate strategy (left-drag → right-push)
+        ├── probe.py                        # reachability / frame probe
+        ├── LEARNINGS.md                    # hard-won empirical findings
+        └── successful_pickplace.mp4        # success video
+```
 
 ## Prerequisites
 
-- **Isaac Lab** (this code was developed against the 2026-06 `main`,
-  isaaclab 0.54.x / Isaac Sim 5.1) with a working Python environment —
-  e.g. installed via `./isaaclab.sh --install` into a uv/conda env.
+- **Isaac Lab** (developed against the 2026-06 `main`, isaaclab 0.54.x /
+  Isaac Sim 5.1) with a working Python environment.
 - Linux + NVIDIA RTX GPU (tested on an RTX 5090, headless).
 - Internet access on first run: the envs download their assets (AutoMate
-  grasp/disassembly JSONs and OBJ meshes, G1 kinematics URDF, scene USDs)
-  from the NVIDIA Nucleus servers.
-- No display needed — both scripts run headless and record video offscreen.
-
-All Python dependencies (including `pin-pink`/`pinocchio` for the G1 task) are
-part of Isaac Lab's standard install.
+  grasp/disassembly JSONs and OBJ meshes, G1 kinematics URDF, scene USDs) from
+  the NVIDIA Nucleus servers into the **current working directory**.
+- All Python dependencies (including `pin-pink` / `pinocchio` for the G1 task)
+  are part of Isaac Lab's standard install — no extra packages needed.
 
 ## Setup
 
@@ -32,73 +70,92 @@ Place this folder under your Isaac Lab repository root:
 
 ```bash
 cd /path/to/IsaacLab
-git clone git@github.com:YilangLiu/Fable_5.git Fable_5
+git clone git@github.com:YilangLiu/IsaacLab_Agentic.git IsaacLab_Agentic
 ```
 
-Below, `<python>` is the Python of your Isaac Lab environment (for a uv env
-created by `./isaaclab.sh -u`: `env_isaaclab/bin/python`; alternatively use
-`./isaaclab.sh -p` as the launcher).
+## Running
 
-## Task 1 — AutoMate plug insertion (Franka)
+A few conventions for every command below:
+
+- **Run from your Isaac Lab repo root** (the parent of this `IsaacLab_Agentic/`
+  folder), because the envs download assets into the current working directory.
+- `<python>` is the Python of your Isaac Lab environment. Either use the repo
+  launcher `./isaaclab.sh -p <script>`, or call the interpreter directly. On the
+  reference machine that is:
+
+  ```bash
+  VIRTUAL_ENV=/path/to/IsaacLab/env_isaaclab PYTHONUNBUFFERED=1 \
+    /path/to/IsaacLab/env_isaaclab/bin/python -u <script> [args]
+  ```
+
+  `-u` / `PYTHONUNBUFFERED=1` matters: Isaac Sim's hard exit drops
+  block-buffered stdout, so without it you lose the `RESULT:` line when
+  redirecting to a file.
+
+### Fable 5 solutions
+
+Fable 5's scripts set headless mode internally and **record a video by default**
+(pass `--no_video` to skip it). Videos land in each task's `videos/` subfolder.
 
 ```bash
-cd /path/to/IsaacLab   # run from the repo root (assets download into the cwd)
-<python> -u Fable_5/AutoMate-Assembly-Direct-v0/insert_plug.py --num_envs 4
+# Task 1 — AutoMate plug insertion (Franka)
+<python> -u IsaacLab_Agentic/Fable_5/AutoMate-Assembly-Direct-v0/insert_plug.py --num_envs 4
+#   → "RESULT: 4/4 envs inserted successfully"
+#   → video in IsaacLab_Agentic/Fable_5/AutoMate-Assembly-Direct-v0/videos/
+
+# Task 2 — G1 humanoid pick-and-place (wheel → basket)
+<python> -u IsaacLab_Agentic/Fable_5/G1_Upper_body_IK/pick_place_wheel.py
+#   → "RESULT: SUCCESS"
+#   → video in IsaacLab_Agentic/Fable_5/G1_Upper_body_IK/videos/
 ```
 
-A vectorized ALIGN → INSERT → SEAT → HOLD state machine servos the grasped plug
-onto the socket axis and performs a compliant rate-limited descent (spiral-search
-fallback for rim jams). Success is checked with the env's own
-`check_plug_inserted_in_socket`. Expected output: `RESULT: 4/4 envs inserted
-successfully`, with the video written to
-`Fable_5/AutoMate-Assembly-Direct-v0/videos/`.
+Approach: Task 1 is a vectorized `ALIGN → INSERT → SEAT → HOLD` state machine
+with a compliant, rate-limited descent (spiral-search fallback for rim jams);
+Task 2 is a 14-phase Pink-IK waypoint controller (hook-grasp + scoop, cross-body
+carry, lower-release-retreat). See
+[`Fable_5/README.md`](Fable_5/README.md) and the per-task READMEs for the full
+design and gotchas.
 
-Notes:
-- The first run downloads `plug_grasps.json`, `disassembly_dist.json`,
-  `disassemble_traj.json`, `plug.obj`, `socket.obj` into the current working
-  directory — run from the Isaac Lab repo root.
-- Do **not** change `sim.render_interval` for this env (see the task README:
-  it breaks the env's scripted reset grasp).
+### Opus solutions
 
-## Task 2 — G1 humanoid pick-and-place (steering wheel into basket)
+Opus's scripts require `--headless` and `--video` to be passed **explicitly**
+(video is off by default). The AutoMate script writes its video next to itself;
+the G1 script's `--out_dir` defaults to a cwd-relative `Opus/G1_Upper_body_IK`,
+so pass an explicit path when running from the repo root.
 
 ```bash
-cd /path/to/IsaacLab
-<python> -u Fable_5/G1_Upper_body_IK/pick_place_wheel.py
+# Task 1 — AutoMate plug insertion (Franka)
+<python> -u IsaacLab_Agentic/Opus/AutoMate-Assembly-Direct-v0/insert_plug.py \
+    --num_envs 4 --headless --video
+#   → "[RESULT] Insertion success: N/N envs ..."
+#   → video in IsaacLab_Agentic/Opus/AutoMate-Assembly-Direct-v0/
+
+# Task 2 — G1 humanoid pick-and-place (wheel → basket)
+<python> -u IsaacLab_Agentic/Opus/G1_Upper_body_IK/solve_pickplace.py \
+    --headless --video --out_dir IsaacLab_Agentic/Opus/G1_Upper_body_IK
+#   → "================ RESULT ================" with SUCCESS
+#   → video in IsaacLab_Agentic/Opus/G1_Upper_body_IK/
 ```
 
-A 14-phase waypoint controller over the env's 28-dim Pink-IK absolute action
-space: radial approach, hook grasp of the wheel rim with a scoop maneuver
-(lift-while-curl), cross-body carry with a mid-carry wrist yaw, lower into the
-basket, release + nudge, retreat. Success is evaluated with the env's exact
-`task_done_pick_place` criterion (the env's success *termination* is disabled so
-the full place-and-retreat completes before the episode ends — see the task
-README for why). Expected output: `RESULT: SUCCESS`, with the video written to
-`Fable_5/G1_Upper_body_IK/videos/`.
+Approach: Task 1 is an analytic two-phase task-space controller that servos the
+fingertip to the env's own `gripper_goal_pos` (align above, then descend);
+Task 2 (Strategy B) is a bimanual handoff — the left hand drags the wheel to a
+low `y`, the right hand corner-grips and carries it *raised* into the place
+region for a clean release. `strat_A_nudge.py` is an alternate single-arm relay,
+`probe.py` measures reachability, and
+[`Opus/G1_Upper_body_IK/LEARNINGS.md`](Opus/G1_Upper_body_IK/LEARNINGS.md)
+records what worked and what flung the wheel.
 
-Notes:
-- The script internally handles three setup quirks this task needs
-  (`import pinocchio` before `AppLauncher`, the `enable_pinocchio` launcher
-  flag, and an explicit import of the blacklisted
-  `locomanipulation.pick_place` subpackage) — no extra flags required.
-- The env has no randomization, so the run is deterministic on a given
-  machine. The wheel's final resting position clears the success box by ~1 cm;
-  if a different GPU/driver shifts contact physics enough to land it short,
-  deepen the wheel-center target in `t_carry2` (`carry_wrist_xy`, currently
-  aimed at `(0.53, 0.43)`).
+## Gotchas
 
-## Repository layout
-
-```
-Fable_5/
-├── AutoMate-Assembly-Direct-v0/
-│   ├── insert_plug.py               # main controller
-│   ├── plug_insertion_success.mp4   # success video
-│   ├── smoke_test.py, probe_reset.py, *.log, videos/
-│   └── README.md                    # design + gotchas
-└── G1_Upper_body_IK/
-    ├── pick_place_wheel.py          # main controller
-    ├── g1_pick_place_success.mp4    # success video
-    ├── smoke_test.py, *.log, videos/
-    └── README.md                    # design + 8 debugging lessons
-```
+- **AutoMate:** do **not** change `sim.render_interval` for this env — it breaks
+  the env's scripted reset grasp. The first run downloads `plug_grasps.json`,
+  `disassembly_dist.json`, `disassemble_traj.json`, `plug.obj`, `socket.obj`
+  into the working directory, so run from the repo root.
+- **G1:** the task needs `import pinocchio` *before* `AppLauncher`, the
+  `enable_pinocchio` launcher flag, and an explicit import of the blacklisted
+  `locomanipulation.pick_place` subpackage — all of which the scripts handle
+  internally. The env has no randomization, so a run is deterministic on a given
+  machine; a different GPU/driver can shift contact physics enough to change the
+  wheel's final resting position by ~1 cm (see each agent's notes for the knob
+  to retune if it lands short).
