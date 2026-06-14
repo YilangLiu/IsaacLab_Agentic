@@ -146,6 +146,43 @@ region for a clean release. `strat_A_nudge.py` is an alternate single-arm relay,
 [`Opus/G1_Upper_body_IK/LEARNINGS.md`](Opus/G1_Upper_body_IK/LEARNINGS.md)
 records what worked and what flung the wheel.
 
+## Why Fable 5's G1 pick-and-place beats Opus's
+
+Both controllers satisfy the env's `task_done_pick_place` check, but the
+**rendered trajectories are not equal**: Fable 5 performs a clean pick-and-place,
+while Opus shoves the wheel into the target region. The gap comes down to how each
+agent handled the task's two hard constraints — the trihand can't lift a
+center-gripped wheel without flinging it, and no single arm can reach both the
+wheel *and* the basket.
+
+- **A real pick vs. a table drag.** Fable 5 grasps the wheel with the **left hand
+  only**, scoops it (curls the fingers mid-air so the table doesn't block the
+  curl), clamps to a closed fist, and **lifts and carries it** into the basket —
+  the right arm never moves the whole episode. Opus could not lift cleanly (per its
+  own [`LEARNINGS.md`](Opus/G1_Upper_body_IK/LEARNINGS.md), a straight lift
+  *flings* the wheel), so its left hand instead **drags the wheel flat across the
+  table** to a handoff spot before anything is ever picked up.
+
+- **One arm vs. a fragile two-arm handoff.** Because Opus can't finish with one
+  arm, it runs a multi-step **bimanual handoff** (left pins the wheel down → right
+  corner-grips it → left releases and parks far back to free the shared-waist
+  null-space so the right wrist can extend). Two grasp/release cycles and an
+  in-contact handoff add many more points where the wheel can slip or get knocked.
+  Fable 5's single grasp/release cycle is far more robust.
+
+- **Margin vs. knife-edge.** Opus only reaches the place region by exploiting that
+  the right wrist extends ~10 cm further in +x when raised, carrying the wheel at
+  the edge of reach saturation, and leans on a corner grip that "releases cleanly"
+  — which its own notes flag as the *unsolved crux*. Fable 5 sets the wheel flat in
+  the basket, then adds a corrective **NUDGE** to push it fully inside the success
+  box (fixing the slide-back-off-the-rim failure), and holds the success criterion
+  continuously for ~3.3 s with both arms retracted.
+
+Net: Fable 5 *solved* the underlying physics (scoop to complete the curl mid-air,
+a closed fist to survive the dangle), whereas Opus engineered *around* it (drag +
+handoff + raised carry). The result is a busier, more contact-heavy, less
+pick-and-place-looking motion — exactly what the video shows.
+
 ## Gotchas
 
 - **AutoMate:** do **not** change `sim.render_interval` for this env — it breaks
