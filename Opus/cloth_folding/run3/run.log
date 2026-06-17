@@ -1,0 +1,61 @@
+Warp 1.14.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   Kernel cache:
+     /home/yilang/.cache/warp/1.14.0
+Module newton._src.geometry.inertia 76702fd load on device 'cuda:0' took 0.83 ms  (cached)
+Module newton._src.utils.mesh 42a52d3 load on device 'cpu' took 0.85 ms  (cached)
+Module warp._src.coloring 7eb14ba load on device 'cpu' took 0.26 ms  (cached)
+Module validate_and_correct_inertia_kernel_2d598dcb 2d598dc load on device 'cuda:0' took 0.33 ms  (cached)
+Module newton._src.geometry.bvh 9db2945 load on device 'cuda:0' took 0.41 ms  (cached)
+Module newton._src.solvers.featherstone.kernels 99089f7 load on device 'cuda:0' took 7.01 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels 9140806 load on device 'cpu' took 0.24 ms  (cached)
+Module newton._src.geometry.kernels 18b231c load on device 'cuda:0' took 1.64 ms  (cached)
+Module newton._src.solvers.solver c4f5217 load on device 'cuda:0' took 0.47 ms  (cached)
+Module newton._src.viewer.gl.opengl fbf7842 load on device 'cuda:0' took 0.29 ms  (cached)
+Module newton._src.viewer.kernels 0ebd705 load on device 'cuda:0' took 1.13 ms  (cached)
+Module newton._src.geometry.raycast 3935a8e load on device 'cuda:0' took 1.86 ms  (cached)
+Module newton._src.sim.articulation 2a0b555 load on device 'cuda:0' took 3.50 ms  (cached)
+Module newton.examples.cloth.example_cloth_franka_no_target 15bc449 load on device 'cuda:0' took 0.41 ms  (cached)
+Module newton._src.viewer.wind 75ecbac load on device 'cuda:0' took 0.27 ms  (cached)
+Module newton._src.solvers.semi_implicit.kernels_particle f6c5585 load on device 'cuda:0' took 0.67 ms  (cached)
+Module newton._src.sim.collide 6396eb6 load on device 'cuda:0' took 0.35 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn d0253b5 load on device 'cuda:0' took 0.25 ms  (cached)
+Module narrow_phase_primitive_write_contact 51d816f load on device 'cuda:0' took 1.32 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 10a247d load on device 'cuda:0' took 1.13 ms  (cached)
+Module newton._src.geometry.narrow_phase ea48095 load on device 'cuda:0' took 0.50 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1c91f28 load on device 'cuda:0' took 1.39 ms  (cached)
+Module newton._src.geometry.narrow_phase 50781fa load on device 'cuda:0' took 0.50 ms  (cached)
+Module newton._src.geometry.sdf_contact a42a4e3 load on device 'cuda:0' took 0.23 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True b3359c7 load on device 'cuda:0' took 0.25 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_2a472f3f 21580ab load on device 'cuda:0' took 1.08 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5f5fcd6 load on device 'cuda:0' took 0.30 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True e50e031 load on device 'cuda:0' took 0.63 ms  (cached)
+Module export_reduced_contacts_write_contact dc5292a load on device 'cuda:0' took 0.27 ms  (cached)
+Module newton._src.solvers.vbd.rigid_vbd_kernels e8eab16 load on device 'cuda:0' took 1.85 ms  (cached)
+Module newton._src.geometry.kernels 21f1fd2 load on device 'cuda:0' took 1.26 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels 776e1a0 load on device 'cuda:0' took 1.38 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels a8aa1db load on device 'cuda:0' took 1.31 ms  (cached)
+Module newton._src.viewer.viewer_gl cfff9d7 load on device 'cuda:0' took 9.32 ms  (cached)
+Module newton._src.utils.mesh 21ed196 load on device 'cuda:0' took 0.48 ms  (cached)
+Module newton._src.utils.render 509db1b load on device 'cuda:0' took 0.25 ms  (cached)
+RUN3 SUMMARY
+  n_steps: 4540
+  settled_footprint: 3475.664
+  final_footprint: 747.945
+  footprint_ratio: 0.215
+  settled_rgxy: 23.616
+  final_rgxy: 9.951
+  rgxy_ratio: 0.421
+  settled_fx: 57.063
+  settled_fy: 60.909
+  final_fx: 29.244
+  final_fy: 25.576
+  final_ztop: 24.562
+  op_log:
+    fold +X side in    grasp_ee_z= 15.0 footprint= 2162 fx= 39.5 fy= 54.8
+    fold -X side in    grasp_ee_z= 14.8 footprint= 1273 fx= 32.4 fy= 39.3
+    fold far-Y left    grasp_ee_z= 17.2 footprint=  764 fx= 30.7 fy= 24.8
+    fold far-Y right   grasp_ee_z= 17.9 footprint=  745 fx= 29.3 fy= 25.4
